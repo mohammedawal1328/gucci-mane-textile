@@ -2,14 +2,14 @@ backend:
   name: git-gateway
   branch: main
 
-# Folder where uploaded catalog images will be stored
+# Uploaded images storage paths
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# Admin Dashboard Collections
+# Admin Collections
 collections:
   - name: "catalog_settings"
-    label: "Store Catalog (select Products below)"
+    label: "Store Catalog"
     delete: false
     editor:
       preview: false
