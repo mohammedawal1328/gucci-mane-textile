@@ -2,25 +2,31 @@ backend:
   name: git-gateway
   branch: main
 
+# Folder where uploaded catalog images will be stored
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+# Admin Dashboard Collections
 collections:
-  - name: "catalog"
-    label: "Catalog Items"
-    folder: "content"
-    create: false
+  - name: "catalog_settings"
+    label: "Store Catalog"
     delete: false
-    extension: "json"
-    format: "json"
-    fields:
-      - { label: "Catalog Title", name: "title", widget: "string" }
-      - label: "Items"
-        name: "items"
-        widget: "list"
-        summary: "{{fields.title}} - {{fields.price}}"
+    editor:
+      preview: false
+    files:
+      - name: "catalog"
+        label: "Manage Fabrics & Products"
+        file: "content/catalog.json"
+        description: "Add, edit, or remove products displayed on your website."
         fields:
-          - { label: "Product Name", name: "title", widget: "string" }
-          - { label: "Price", name: "price", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Page Main Title", name: "title", widget: "string", default: "Our Fashion & Textile Collection" }
+          - label: "Product List"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.price}}"
+            minimize_collapsed: true
+            fields:
+              - { label: "Product Name", name: "title", widget: "string" }
+              - { label: "Price (e.g. $50 or 25,000 CFA)", name: "price", widget: "string" }
+              - { label: "Product Image", name: "image", widget: "image" }
+              - { label: "Description", name: "description", widget: "text", required: false }
