@@ -183,3 +183,69 @@ footer p {
   color: #adb5bd;
   font-size: 0.9rem;
 }
+
+/* ==========================================
+   RESPONSIVE LAYOUT & MEDIA QUERIES
+   ========================================== */
+
+/* Main Container & Grid Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Responsive Image Scaling */
+.catalog-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-top: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: 1fr; /* Single column layout for small phones */
+  }
+
+  .btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
