@@ -1,40 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const catalogGrid = document.getElementById("catalog-grid");
+
   fetch('content/catalog.json')
     .then(response => response.json())
     .then(data => {
-      // Set title if available
-      const sectionTitle = document.querySelector('.section-title');
-      if (sectionTitle && data.title) {
-        sectionTitle.textContent = data.title;
-      }
-
-      // Populate Catalog Grid
-      const grid = document.getElementById('catalog-grid');
-      if (!grid) return;
+      // Check if data has items or is structured as a collection
+      const items = data.items || data;
       
-      grid.innerHTML = ''; // Clear existing static cards
-
-      if (data.items && data.items.length > 0) {
-        data.items.forEach(item => {
-          const card = document.createElement('div');
-          card.className = 'catalog-card';
-
-          card.innerHTML = `
-            <img src="${item.image || 'assets/images/placeholder.jpg'}" alt="${item.name}">
-            <div class="card-content">
-              <span class="category">${item.category}</span>
-              <h3>${item.name}</h3>
-              <p>${item.description}</p>
-              <div class="price">${item.price ? item.price : ''}</div>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-      } else {
-        grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">No items found in catalog.</p>';
+      if (!items || items.length === 0) {
+        catalogGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">No products available at the moment.</p>';
+        return;
       }
+
+      catalogGrid.innerHTML = items.map(item => `
+        <div class="catalog-card">
+          <img src="${item.image || 'assets/placeholder.jpg'}" alt="${item.title || 'Textile Item'}">
+          <div class="card-body">
+            <h4 class="card-title">${item.title || 'Featured Fabric'}</h4>
+            <div class="card-price">${item.price || 'Contact for price'}</div>
+            <p class="card-desc">${item.description || ''}</p>
+            <a href="https://wa.me/22890638574?text=Hello,%20I%20want%20to%20order%20${encodeURIComponent(item.title)}" class="card-btn" target="_blank">Order via WhatsApp</a>
+          </div>
+        </div>
+      `).join('');
     })
     .catch(error => {
-      console.error('Error loading catalog data:', error);
+      console.error('Error loading catalog:', error);
+      catalogGrid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: red;">Failed to load catalog items.</p>';
     });
 });

@@ -3,54 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GUCCI MANE4pf's Textile | Premium Tailoring & Fashion</title>
+  <title>GUCCI MANE4pf's Textile | Quality Fabrics & Designs</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Netlify Identity Widget for Decap CMS Login Access -->
+  <!-- Netlify Identity Widget for Admin Login -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
-  <!-- Navigation Header -->
-  <header>
-    <div class="logo">
-      <h1>GUCCI <span>MANE4pf's</span></h1>
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <h1>GUCCI MANE4pf's Textile</h1>
+        <p class="location">📍 Opp. Catholic Church (Pizango), Cinkassé, Togo</p>
+      </div>
+      <div class="contact-info">
+        <a href="tel:+22890638574" class="contact-btn">📞 +228 90638574</a>
+        <a href="tel:+233536881036" class="contact-btn">📞 +233 536881036</a>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#catalog">Collection</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="admin/" target="_blank" style="color: var(--accent-color);">Admin Login</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h2>Exquisite African Fashion & Textiles</h2>
-      <p>Specializing in bespoke Agbada, Kaftans, Shirts, Waistcoats, Pant Trousers, and Professional Wardrobe Consultancy. <strong>We deliver nationwide!</strong></p>
-      <a href="https://wa.me/22890638574?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20textile%20and%20tailoring%20services." target="_blank" class="btn">Order via WhatsApp</a>
+    <div class="container hero-content">
+      <h2>Exquisite Fabrics & Custom Designs</h2>
+      <p>Discover top-quality textiles tailored to your style. Order directly via WhatsApp or visit our shop!</p>
+      <a href="https://wa.me/22890638574?text=Hello%20Gucci%20Mane%20Textile,%20I%20want%20to%20inquire%20about%20your%20fabrics." class="btn-primary" target="_blank">Chat on WhatsApp</a>
     </div>
   </section>
 
-  <!-- Catalog Section (Populated dynamically via js/main.js and Decap CMS) -->
-  <main class="container" id="catalog">
-    <h2 class="section-title">Our Fashion & Textile Collection</h2>
-    <div class="catalog-grid" id="catalog-grid">
-      <!-- Dynamic cards will load here -->
+  <!-- Catalog Section -->
+  <main class="container catalog-section">
+    <h3 class="section-title">Our Featured Collection</h3>
+    <div id="catalog-grid" class="catalog-grid">
+      <!-- Dynamic products from catalog.json will load here -->
     </div>
   </main>
 
-  <!-- Contact & Location Footer -->
-  <footer id="contact">
-    <h3>GUCCI MANE4pf's Textile</h3>
-    <p>📍 Opp. Catholic Church (Pizango), Cinkassé, Togo</p>
-    <p>📞 Phone / WhatsApp: +228 90638574 / +233 536881036</p>
-    <p style="margin-top: 1rem;">&copy; 2026 GUCCI MANE4pf's Textile. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 GUCCI MANE4pf's Textile. All rights reserved. | <a href="/admin/" style="color: #d4af37;">Admin Portal</a></p>
+    </div>
   </footer>
 
-  <!-- Main JavaScript File -->
   <script src="js/main.js"></script>
 </body>
 </html>
