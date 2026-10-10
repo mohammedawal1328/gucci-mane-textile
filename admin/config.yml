@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # Default git branch
+
+# Media folder settings
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+# Content Collections
+collections:
+  - name: "catalog"
+    label: "Textile Catalog & Services"
+    files:
+      - file: "content/catalog.json"
+        label: "Catalog Items"
+        name: "catalog_items"
+        fields:
+          - { label: "Catalog Title", name: "title", widget: "string", default: "Our Fashion & Textile Collection" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: '{{fields.name}} - {{fields.category}}'
+            fields:
+              - { label: "Item Name", name: "name", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["Agbada", "Kaftans", "Shirts", "Waistcoats", "Pant Trousers", "Consultancy"] }
+              - { label: "Price / Starting From", name: "price", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Item Photo", name: "image", widget: "image" }
