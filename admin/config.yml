@@ -7,13 +7,14 @@ public_folder: "/assets/uploads"
 
 collections:
   - name: "catalog"
-    label: "Catalog Items"
+    label: "Textile Catalog & Services"
     file: "content/catalog.json"
     fields:
       - { label: "Catalog Title", name: "title", widget: "string" }
       - label: "Items"
         name: "items"
         widget: "list"
+        summary: "{{fields.title}} - {{fields.price}}"
         fields:
           - { label: "Product Name", name: "title", widget: "string" }
           - { label: "Price", name: "price", widget: "string" }
