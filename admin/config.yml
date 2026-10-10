@@ -9,13 +9,13 @@ public_folder: "/assets/uploads"
 # Admin Dashboard Collections
 collections:
   - name: "catalog_settings"
-    label: "Store Catalog"
+    label: "Store Catalog (select Products below)"
     delete: false
     editor:
       preview: false
     files:
       - name: "catalog"
-        label: "Manage Fabrics & Products"
+        label: "Edit Products & Fabrics"
         file: "content/catalog.json"
         description: "Add, edit, or remove products displayed on your website."
         fields:
