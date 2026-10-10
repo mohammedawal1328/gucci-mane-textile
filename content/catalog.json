@@ -2,18 +2,11 @@
   "title": "Our Fashion & Textile Collection",
   "items": [
     {
-      "name": "Custom Royal Agbada Set",
+      "name": "Timberland",
       "category": "Waistcoats",
       "price": "Contact for pricing",
       "description": "Tailored premium Agbada featuring custom embroidery and high-grade fabric.",
       "image": "assets/uploads/img_1766.jpeg"
-    },
-    {
-      "name": "Designer Tailored Kaftan",
-      "category": "Kaftans",
-      "price": "Contact for pricing",
-      "description": "Elegant bespoke Kaftan for special occasions and executive wear.",
-      "image": "assets/uploads/sample-kaftan.jpg"
     }
   ]
 }
